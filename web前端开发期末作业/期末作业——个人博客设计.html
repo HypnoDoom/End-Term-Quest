@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html>
+<head>
+	<title>朱然的个人博客</title>
+	<style type="text/css">
+		body
+		{
+			background-image: url("background.jpg");
+		}
+
+		#top
+		{
+			height: 54px;
+			width: 100%;
+			margin-top: 15px;
+			background: rgba(255,255,255,0.3);
+		}
+		#links
+		{
+			height: 580px;
+			width: 19%;
+			margin-top: 15px;
+			margin-right: 1%;
+			background: rgba(255,255,255,0.3);
+			float: left;
+		}
+		.main
+		{
+			width: 80%;
+			height: 580px;
+			margin-top: 15px;
+			margin-left: 20%;
+			background: rgba(255,255,255,0.3);
+		}
+		.link
+		{
+			width: 100%;
+			height: 32px;
+			background: none;
+			font-size: 16px;
+			border: none;
+		}
+		#text1
+		{
+			display: inline-block;
+			float: left;
+			color: black;
+			font-family: 微软雅黑;
+			font-size: 16px;
+			padding-right: 24px;
+			padding-left: 24px;
+			padding-bottom: 12px;
+			position: absolute;
+			left: 12px;
+			font-weight: bold;
+		}
+		.clock
+		{
+			width: 300px;
+			height: 54px;
+			float: left;
+			color: black;
+			font-family: 微软雅黑;
+			font-size: 16px;
+			padding-right: 24px;
+			padding-left: 24px;
+			border: none;
+			background: none;
+			position: absolute;
+			right: 12px;
+			font-weight: bold;
+		}
+		a
+		{
+			font-family: "微软雅黑", "宋体";
+			text-decoration: none;
+			color: black;
+			width: 100%;
+		}
+		a:visited {text-decoration: none; color: black;}
+		a:hover {text-decoration: none; color: orange; cursor: pointer;}
+		a:active {text-decoration: none; color: black; cursor: pointer;}
+		#comment1
+		{
+			font-size: 14px;
+			text-align: center;
+			padding-top: 80px;
+		}
+		#comment2
+		{
+			font-size: 14px;
+			text-align: center;
+		}
+		#comment3
+		{
+			font-size: 14px;
+			text-align: center;
+		}
+		table
+		{
+			padding-top: 3%;
+			padding-left: 3%;
+			padding-right: 3%;
+		}
+	</style>
+	
+</head>
+
+<body>
+	<div id="top">
+		<p id="text1">朱然的个人博客 (2021212033003)</p>
+		<input type="button" id="clock1" class="clock" value="查看时间" onclick="showTime()"></input>
+	</div>
+	<script>
+			var a = document.getElementById("clock1");
+			var t = new Date()
+			var year = t.getFullYear();
+			var month = t.getMonth() + 1;
+			var day = t.getDate();
+			var week = t.getDay();
+			var arr = new Array("日","一","二","三","四","五","六",)
+			var currentDate = year + "-" + month + "-" + day + " " + "星期" + arr[week];	
+			//修改月份格式
+			if (month >= 1 && month <= 9) {
+		        month = "0" + month;
+		        }
+			
+			//修改日期格式
+			if (day >= 0 && day <= 9) {
+		        day = "0" + day;
+		        }	
+
+			var currentFormatDate = "今天是" + "   " + year + "年" + month + "月" + day + "日   " + "星期" + arr[week];
+			a.value = currentFormatDate;
+			function showTime(){
+				alert(currentFormatDate);
+			}
+	</script>
+	<div id="links">
+		<h2 style="text-align: center; padding-top: 5px;">目录</h2>
+		<input class="link" type="button" value="个人简介" onclick="changeText2()">
+		<input class="link" type="button" value="游戏作品" onclick="changeText1()">
+		<input class="link" type="button" value="联系方式" onclick="changeText3()">
+		<input class="link" type="button" value="获取格言" onclick="getWord()">
+		<h2 style="text-align: center; padding-top: 5px;">友情链接</h2>
+		<a href="https://www.baidu.com/"><input class="link" type="button" value="百度"></a>
+		<a href="https://www.163.com/"><input class="link" type="button" value="网易"></a>
+		<a href="https://www.cuc.edu.cn/"><input class="link" type="button" value="中传白杨网"></a>
+		<p id="comment1">&copy;2022</p><br\>
+		<p id="comment2">2021级-计算机科学与技术-朱然</p><br\>
+		<p id="comment3">2022.1.9</p>
+	</div>
+	<div class="main">
+		<table>
+			<tr>
+				<td><p id="l1">个人简介：</p></td>
+			</tr>
+			<tr>
+				<td><p id="l2">朱然 2002年出生于北京市</p></td>
+			</tr>
+			<tr>
+				<td><p id="l3">现就读于中国传媒大学计算机科学与技术系</p></td>
+			</tr>
+			<tr>
+				<td><p id="l4">个人爱好：</p></td>
+			</tr>
+			<tr>
+				<td><p id="l5">夜间骑行、游泳、羽毛球、书法等</p></td>
+			</tr>
+			<tr>
+				<td><p id="l6">个人优势：</p></td>
+			</tr>
+			<tr>
+				<td><p id="l7">比较乐于与其他人交往;爱好广泛，能够广泛参加不同的活动;计算机基础相对扎实，能够帮助处理一些简单的计算机问题;能
+					够充分发挥地域优势，作为本地人能够充分利用本地优势</p>
+			</tr>
+	</div>
+	<script type="text/javascript">
+		var a1 = document.getElementById("l1");
+		var b1 = document.getElementById("l2");
+		var c1 = document.getElementById("l3");
+		var d1 = document.getElementById("l4");
+		var e1 = document.getElementById("l5");
+		var f1 = document.getElementById("l6");
+		var g1 = document.getElementById("l7");
+		function changeText1()
+		{
+			
+			a1.innerHTML="游戏作品：";
+			b1.innerHTML="(已发布)马里奥同人作品——Mario Forever Easy Adventure";
+			c1.innerHTML="使用平台：Clickteam Fusion 2.5 R286.6,使用引擎：Rainbow Engine by lyh";
+			d1.innerHTML="发布贴链接(下载链接在发布贴中)：https://tieba.baidu.com/p/6234182654";
+			e1.innerHTML="(已发布)马里奥同人作品——Mario Forever Easy Adventure 2";
+			f1.innerHTML="使用平台：Clickteam Fusion 2.5 R286.6,使用引擎：Rainbow Engine Pro by lyh & gurcd";
+			g1.innerHTML="发布贴链接(下载链接在发布贴中)：https://www.marioforever.net/thread-1318-1-1.html";
+		}
+		function changeText2()
+		{
+			a1.innerHTML="个人简介：";
+			b1.innerHTML="朱然 2002年出生于北京市";
+			c1.innerHTML="现就读于中国传媒大学计算机科学与技术系";
+			d1.innerHTML="个人爱好：";
+			e1.innerHTML="夜间骑行、游泳、羽毛球、书法等";
+			f1.innerHTML="个人优势：";
+			g1.innerHTML="比较乐于与其他人交往;爱好广泛，能够广泛参加不同的活动;计算机基础相对扎实，能够帮助处理一些简单的计算机问题;能够充分	发挥地域优势，作为本地人能够充分利用本地优势";
+		}
+		function changeText3()
+		{
+			a1.innerHTML="联系方式：";
+			b1.innerHTML="电话、微信：13810272654";
+			c1.innerHTML="QQ：1059821638";
+			d1.innerHTML="邮箱：zhuran2021@163.com";
+			e1.innerHTML="学校：中国传媒大学计算机与网络空间安全学院——2021级计算机科学与技术";
+			f1.innerHTML="";
+			g1.innerHTML="";
+		}
+		var word = new Array();
+		word[0] = "哪有斩不断的荆棘?哪有打不死的豺虎?哪有推不翻的山岳?你只须奋斗着，猛勇地奋斗着;持续着，永远的持续着，胜利就是你的了。";
+		word[1] = "一个人的快乐，不是因为他拥有的多，而是因为他计较的少。";
+		word[2] = "静坐常思己过，闲谈莫论人非，能受苦乃为志士，肯吃亏不是痴人，敬君子方显有德，怕小人不算无能，退一步天高地阔，让三分心平气和，欲进步需思退步，若着手先虑放手，如得意不宜重往，凡做事应有余步。持黄金为珍贵，知安乐方值千金，事临头三思为妙，怒上心忍让最高。切勿贪意外之财，知足者人心常乐。若能以此去处事，一生安乐任逍遥。";
+		word[3] = "“我欲”是贫穷的标志。事能常足，心常惬，人到无求品自高。";
+		word[4] = "诸恶莫做，众善奉行，莫以善小而不为，莫以恶小而为之。";
+		word[5] = "莫妒他长，妒长，则己终是短。莫护己短，护短，则己终不长。";
+		word[6] = "不自重者，取辱。不自长者，取祸。不自满者，受益。不自足者，博闻。";
+		word[7] = "人生最大的罪过是自欺欺人。人生最可怜的性情是自卑。人生最大的破产是绝望。";
+		word[8] = "忍一时，风平浪静，退一步，海阔天空。";
+		word[9] = "智者知幻即离，愚者以幻为真。";
+		word[10] = "不惜光阴过时悔，黑发不学白发悔。酒色致祸悔，安不将息病时悔。官行贿赂致罪悔，富不勤俭贫时悔。不孝父母老时悔，遇难不帮有事悔。动不三思临头悔，盲目草率错时悔。";
+		function getWord()
+		{
+			var num = Math.round(Math.random() * 10);
+			alert(word[num]);
+		}
+	</script>
+</body>
+</html>
